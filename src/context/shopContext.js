@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Client from 'shopify-buy'
+import { useState } from 'react';
 
 
 const ShopContext = React.createContext();
@@ -12,7 +13,7 @@ const client = Client.buildClient({
 
 export class ShopProvider extends Component {
 
-    state= {
+    state = {
         product: {},
         products: [],
         checkout: {},
@@ -76,7 +77,7 @@ export class ShopProvider extends Component {
     console.log(this.state.checkout)
 
     return (
-      <ShopContext.Provider>
+      <ShopContext.Provider> 
         {this.props.children}
       </ShopContext.Provider>
     )
